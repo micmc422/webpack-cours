@@ -1,0 +1,24 @@
+### 4. Plugins :
+Les plugins sont des modules qui effectuent des tâches plus avancées sur votre bundle. Ils peuvent être utilisés pour effectuer des optimisations, générer des fichiers supplémentaires (comme le fichier HTML), ou même manipuler le graphe des dépendances.
+
+Exemple de configuration avec le plugin HtmlWebpackPlugin dans `webpack.config.js` :
+
+```javascript
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+    }),
+  ],
+  // ...
+};
+```
+
+Ces concepts de base sont essentiels pour configurer Webpack efficacement. Vous pouvez ensuite personnaliser davantage votre configuration en fonction des besoins spécifiques de votre projet.

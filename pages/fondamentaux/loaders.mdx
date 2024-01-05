@@ -1,0 +1,24 @@
+### 3. Loaders :
+Les loaders permettent à Webpack de traiter des fichiers autres que du JavaScript en les transformant en modules que votre application peut utiliser. Par exemple, vous pouvez utiliser des loaders pour traiter des fichiers CSS, des images, du TypeScript, etc.
+
+Exemple de configuration pour un loader CSS dans `webpack.config.js` :
+
+```javascript
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
+  // ...
+};
+```
+

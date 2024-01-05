@@ -1,0 +1,76 @@
+# Gestion des Dépendances avec npm et yarn dans Webpack
+
+La gestion des dépendances est une partie essentielle du développement avec Webpack. Les gestionnaires de paquets tels que npm (Node Package Manager) et yarn facilitent l'installation, la mise à jour et la gestion des dépendances de votre projet. Dans ce module, nous explorerons l'utilisation de npm et yarn avec Webpack.
+
+**1. Initialisation du Projet :**
+
+Pour démarrer un nouveau projet avec npm, exécutez la commande suivante dans le répertoire de votre projet :
+
+```bash
+npm init -y
+```
+
+Cela crée un fichier `package.json` avec des configurations par défaut. Si vous préférez utiliser yarn, vous pouvez initialiser le projet avec la commande suivante :
+
+```bash
+yarn init -y
+```
+
+**2. Installation des Dépendances :**
+
+Pour installer Webpack et ses dépendances, exécutez l'une des commandes suivantes selon votre choix de gestionnaire de paquets :
+
+Avec npm :
+
+```bash
+npm install webpack webpack-cli --save-dev
+```
+
+Avec yarn :
+
+```bash
+yarn add webpack webpack-cli --dev
+```
+
+**3. Configuration de Webpack :**
+
+Créez un fichier de configuration `webpack.config.js` pour définir la configuration de Webpack. Vous pouvez y définir des entrées, des sorties, des règles de loaders, des plugins, etc.
+
+**4. Scripts npm/yarn :**
+
+Ajoutez des scripts dans votre fichier `package.json` pour exécuter des commandes Webpack. Par exemple :
+
+```json
+// package.json
+{
+  // ...
+  "scripts": {
+    "build": "webpack"
+  }
+}
+```
+
+Vous pouvez maintenant exécuter `npm run build` (ou `yarn build`) pour lancer le processus de construction avec Webpack.
+
+**5. Installation de Dépendances Additionnelles :**
+
+Pour installer des loaders, des plugins ou d'autres dépendances spécifiques à Webpack, utilisez les commandes d'installation correspondantes. Par exemple, pour installer le loader Babel avec npm :
+
+```bash
+npm install babel-loader @babel/core @babel/preset-env --save-dev
+```
+
+Avec yarn :
+
+```bash
+yarn add babel-loader @babel/core @babel/preset-env --dev
+```
+
+**Objectifs :**
+- Comprendre l'initialisation d'un projet avec npm et yarn.
+- Installer Webpack et ses dépendances avec npm et yarn.
+- Configurer Webpack en créant un fichier `webpack.config.js`.
+- Utiliser des scripts npm/yarn pour exécuter des commandes Webpack.
+- Installer des dépendances additionnelles spécifiques à Webpack.
+
+La gestion des dépendances avec npm et yarn est un aspect fondamental du développement moderne avec Webpack. Ces outils facilitent la création, la gestion et le partage de projets complexes en gérant efficacement les dépendances. Prêt à mettre en œuvre ces étapes dans votre projet ? Passons à la pratique.

@@ -1,0 +1,18 @@
+### 2. Output :
+L'output spécifie le nom et le chemin du fichier résultant généré par Webpack (le bundle). C'est le fichier que vous inclurez dans votre page HTML.
+
+Exemple de configuration dans `webpack.config.js` :
+
+```javascript
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  // ...
+};
+```
+

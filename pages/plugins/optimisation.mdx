@@ -1,0 +1,78 @@
+# Optimisation des Performances avec Webpack
+
+Dans ce module, nous allons explorer des techniques d'optimisation des performances avec Webpack. L'optimisation est cruciale pour garantir que votre application se charge rapidement et offre une expérience utilisateur fluide. Voici quelques stratégies que vous pouvez mettre en œuvre pour améliorer les performances de votre projet Webpack.
+
+**1. Code Splitting :**
+   - Utilisez le code splitting pour diviser votre code en morceaux plus petits. Cela permet un chargement asynchrone des morceaux de code au besoin, améliorant ainsi le temps de chargement initial.
+
+   ```javascript
+   // webpack.config.js
+   module.exports = {
+     // ...
+     optimization: {
+       splitChunks: {
+         chunks: 'all',
+       },
+     },
+   };
+   ```
+
+**2. Lazy Loading :**
+   - Profitez du code splitting pour mettre en œuvre le lazy loading. Chargez les ressources uniquement lorsque l'utilisateur en a besoin, améliorant ainsi la réactivité de votre application.
+
+   ```javascript
+   // Exemple d'utilisation du lazy loading avec import()
+   const button = document.getElementById('myButton');
+
+   button.addEventListener('click', () => {
+     import('./module').then((module) => {
+       module.doSomething();
+     });
+   });
+   ```
+
+**3. Compression GZIP/BR :**
+   - Configurez votre serveur pour compresser les fichiers avec GZIP ou Brotli. Cela réduit la taille des fichiers transférés sur le réseau.
+
+**4. Image Optimization :**
+   - Optimisez les images pour réduire leur taille. Utilisez des outils tels que ImageMagick, OptiPNG, ou des services en ligne comme TinyPNG.
+
+**5. Utilisation de la Mise en Cache :**
+   - Configurez les en-têtes de mise en cache côté serveur pour permettre aux navigateurs de stocker en cache les fichiers statiques. Cela réduit les demandes réseau et accélère les chargements ultérieurs.
+
+**6. Parallelization des Requêtes HTTP :**
+   - Configurez Webpack pour diviser votre bundle en plusieurs fichiers, permettant au navigateur de paralléliser les téléchargements.
+
+   ```javascript
+   // webpack.config.js
+   module.exports = {
+     // ...
+     optimization: {
+       runtimeChunk: 'single',
+     },
+   };
+   ```
+
+**7. Utilisation de Webpack Performance Hints :**
+   - Activez les avertissements de performances de Webpack pour être informé des parties de votre configuration qui pourraient affecter les performances.
+
+   ```javascript
+   // webpack.config.js
+   module.exports = {
+     // ...
+     performance: {
+       hints: 'warning', // ou 'error'
+     },
+   };
+   ```
+
+**Objectifs :**
+   - Comprendre comment implémenter le code splitting pour améliorer le chargement initial.
+   - Mettre en œuvre le lazy loading pour charger les ressources de manière asynchrone.
+   - Configurer la compression GZIP/BR pour réduire la taille des fichiers transférés.
+   - Optimiser les images pour améliorer les performances.
+   - Utiliser la mise en cache pour accélérer les chargements ultérieurs.
+   - Paralleliser les requêtes HTTP en configurant Webpack.
+   - Activer les avertissements de performances pour détecter les problèmes potentiels.
+
+L'application de ces stratégies d'optimisation contribuera à rendre votre application Webpack plus rapide, réactive et agréable pour les utilisateurs. Prêt à améliorer les performances de votre projet ? Passons à la mise en pratique de ces techniques.
