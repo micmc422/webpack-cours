@@ -11,3 +11,70 @@ module.exports = {
   // ...
 };
 ```
+### Exercice : Créer une application Webpack simple
+
+1. Créez un nouveau dossier pour votre projet et naviguez vers ce dossier dans votre terminal.
+
+2. Initialisez un nouveau projet Node.js en exécutant la commande suivante :
+
+```bash
+npm init -y
+```
+
+3. Installez Webpack et Webpack CLI en tant que dépendances de développement :
+
+```bash
+npm install --save-dev webpack webpack-cli
+```
+
+4. Créez un fichier `index.html` dans votre dossier de projet avec le contenu suivant :
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Webpack App</title>
+</head>
+<body>
+   <h1>Bonjour de Webpack !</h1>
+   <script src="dist/main.js"></script>
+</body>
+</html>
+```
+
+5. Créez un fichier `index.js` dans un nouveau dossier `src` avec le contenu suivant :
+
+```javascript
+console.log('Bonjour de Webpack !');
+```
+
+6. Créez un fichier `webpack.config.js` à la racine de votre projet avec le contenu suivant :
+
+```javascript
+const path = require('path');
+
+module.exports = {
+ entry: './src/index.js',
+ output: {
+   filename: 'main.js',
+   path: path.resolve(__dirname, 'dist'),
+ },
+};
+```
+
+7. Ajoutez un script `build` à votre fichier `package.json` pour exécuter Webpack :
+
+```json
+"scripts": {
+ "build": "webpack"
+}
+```
+
+8. Exécutez le script `build` :
+
+```bash
+npm run build
+```
+
+9. Ouvrez votre fichier `index.html` dans un navigateur et vérifiez si le message 'Bonjour de Webpack !' s'affiche dans la console.

@@ -20,5 +20,57 @@ module.exports = {
   // ...
 };
 ```
+### Exercice : Utiliser le plugin HtmlWebpackPlugin
+Le plugin HtmlWebpackPlugin est un outil très utile qui génère automatiquement un fichier HTML pour votre application. Il injecte tous les bundles Webpack (ou chunks) que vous avez définis dans votre configuration Webpack.
 
-Ces concepts de base sont essentiels pour configurer Webpack efficacement. Vous pouvez ensuite personnaliser davantage votre configuration en fonction des besoins spécifiques de votre projet.
+Lorsque vous construisez votre application pour la production, vous pouvez avoir plusieurs bundles JavaScript. Chaque bundle représente une partie différente de votre application. Le plugin HtmlWebpackPlugin vous permet de générer un fichier HTML unique qui inclut toutes ces références de script.
+
+Par exemple, si vous avez deux bundles, `main.js` et `vendor.js`, le plugin HtmlWebpackPlugin générera un fichier HTML qui ressemble à ceci :
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+ <!-- ... -->
+</head>
+<body>
+ <!-- ... -->
+ <script src="main.js"></script>
+ <script src="vendor.js"></script>
+</body>
+</html>
+```
+
+Chaque fois que vous construisez votre application, le plugin HtmlWebpackPlugin mettra à jour le fichier HTML pour inclure les derniers bundles.
+
+En outre, le plugin HtmlWebpackPlugin offre beaucoup d'options de personnalisation. Par exemple, vous pouvez définir un modèle HTML personnalisé, ajouter des métadonnées, minifier le HTML, et bien plus encore.
+
+1. Installez le plugin HtmlWebpackPlugin en tant que dépendance de développement :
+
+```bash
+npm install --save-dev html-webpack-plugin
+```
+
+2. Importez le plugin HtmlWebpackPlugin dans votre fichier `webpack.config.js` :
+
+```javascript
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+```
+
+3. Ajoutez une nouvelle instance de HtmlWebpackPlugin à votre tableau de plugins dans la configuration de Webpack :
+
+```javascript
+module.exports = {
+ // ...
+ plugins: [
+  new HtmlWebpackPlugin({
+    template: 'index.html',
+  }),
+ ],
+ // ...
+};
+```
+
+4. Exécutez à nouveau votre script de construction Webpack.
+
+5. Vérifiez si un nouveau fichier `index.html` a été généré dans le dossier `dist`. Ce fichier doit inclure une référence au bundle JavaScript généré par Webpack.

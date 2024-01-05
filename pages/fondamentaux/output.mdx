@@ -15,4 +15,27 @@ module.exports = {
   // ...
 };
 ```
+### Exercice : Configurer l'output de Webpack
+
+1. Modifiez votre fichier `webpack.config.js` pour changer le nom du fichier de sortie en `myBundle.js`.
+
+2. Changez également le chemin de sortie pour qu'il pointe vers un nouveau dossier `dist/custom`.
+
+3. Après avoir effectué ces modifications, exécutez à nouveau votre script de construction Webpack.
+
+4. Vérifiez si le fichier `myBundle.js` est maintenant situé dans le dossier `dist/custom`.
+
+Voici comment votre configuration devrait ressembler après les modifications :
+```javascript
+module.exports = { 
+  // ... output: 
+  { 
+    filename: 'myBundle.js', 
+    path: path.resolve(__dirname, 'dist/custom'),
+    }, 
+  // ... 
+  };
+
+
+```
 

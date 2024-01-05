@@ -21,4 +21,46 @@ module.exports = {
   // ...
 };
 ```
+### Exercice : Utiliser un Loader CSS
 
+1. Dans votre projet existant, créez un fichier CSS dans le dossier `src`. Par exemple, vous pouvez créer un fichier `styles.css` avec le contenu suivant :
+
+```css
+body {
+ background-color: lightblue;
+}
+```
+
+2. Importez ce fichier CSS dans votre fichier `index.js` :
+
+```javascript
+import './styles.css';
+console.log('Bonjour de Webpack !');
+```
+
+3. Modifiez votre fichier `webpack.config.js` pour ajouter un loader CSS. Vous aurez besoin d'installer `style-loader` et `css-loader` comme dépendances de développement :
+
+```bash
+npm install --save-dev style-loader css-loader
+```
+
+Et ajoutez les règles suivantes à votre configuration :
+
+```javascript
+module.exports = {
+ // ...
+ module: {
+   rules: [
+     {
+       test: /\.css$/,
+       use: ['style-loader', 'css-loader'],
+     },
+   ],
+ },
+ // ...
+};
+```
+
+4. Exécutez à nouveau votre script de construction Webpack.
+
+5. Ouvrez votre fichier `index.html` dans un navigateur et vérifiez si le fond de la page est maintenant bleu clair.
