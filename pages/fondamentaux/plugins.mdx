@@ -1,3 +1,5 @@
+import { Steps } from "nextra/components"
+
 # Plugins
 Les plugins sont des modules qui effectuent des tâches plus avancées sur votre bundle. Ils peuvent être utilisés pour effectuer des optimisations, générer des fichiers supplémentaires (comme le fichier HTML), ou même manipuler le graphe des dépendances.
 
@@ -44,20 +46,23 @@ Par exemple, si vous avez deux bundles, `main.js` et `vendor.js`, le plugin Html
 Chaque fois que vous construisez votre application, le plugin HtmlWebpackPlugin mettra à jour le fichier HTML pour inclure les derniers bundles.
 
 En outre, le plugin HtmlWebpackPlugin offre beaucoup d'options de personnalisation. Par exemple, vous pouvez définir un modèle HTML personnalisé, ajouter des métadonnées, minifier le HTML, et bien plus encore.
-
-1. Installez le plugin HtmlWebpackPlugin en tant que dépendance de développement :
+<Steps>
+### Installer HtmlWebpackPlugin
+Installez le plugin HtmlWebpackPlugin en tant que dépendance de développement :
 
 ```bash copy
 npm install --save-dev html-webpack-plugin
 ```
 
-2. Importez le plugin HtmlWebpackPlugin dans votre fichier `webpack.config.js` :
+### Importer HtmlWebpackPlugin
+Importez le plugin HtmlWebpackPlugin dans votre fichier `webpack.config.js` :
 
 ```javascript copy
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 ```
 
-3. Ajoutez une nouvelle instance de HtmlWebpackPlugin à votre tableau de plugins dans la configuration de Webpack :
+### Ajouter le plugin à la configuration
+Ajoutez une nouvelle instance de HtmlWebpackPlugin à votre tableau de plugins dans la configuration de Webpack :
 
 ```javascript copy
 module.exports = {
@@ -71,6 +76,9 @@ module.exports = {
 };
 ```
 
-4. Exécutez à nouveau votre script de construction Webpack.
+### Build 
+Exécutez à nouveau votre script de construction Webpack.
 
-5. Vérifiez si un nouveau fichier `index.html` a été généré dans le dossier `dist`. Ce fichier doit inclure une référence au bundle JavaScript généré par Webpack.
+### Vérifiez
+Vérifiez si un nouveau fichier `index.html` a été généré dans le dossier `dist`. Ce fichier doit inclure une référence au bundle JavaScript généré par Webpack.
+</Steps>

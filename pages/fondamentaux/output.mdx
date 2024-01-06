@@ -1,3 +1,5 @@
+import { Steps } from "nextra/components"
+
 # Output
 L'output spécifie le nom et le chemin du fichier résultant généré par Webpack (le bundle). C'est le fichier que vous inclurez dans votre page HTML.
 
@@ -16,15 +18,19 @@ module.exports = {
 };
 ```
 ## Exercice : Configurer l'output de Webpack
+<Steps>
+### `webpack.config.js`
+Modifiez votre fichier `webpack.config.js` pour changer le nom du fichier de sortie en `myBundle.js`.
 
-1. Modifiez votre fichier `webpack.config.js` pour changer le nom du fichier de sortie en `myBundle.js`.
+### Output
+Changez également le chemin de sortie pour qu'il pointe vers un nouveau dossier `dist/custom`.
 
-2. Changez également le chemin de sortie pour qu'il pointe vers un nouveau dossier `dist/custom`.
+### Build
+Après avoir effectué ces modifications, exécutez à nouveau votre script de construction Webpack.
 
-3. Après avoir effectué ces modifications, exécutez à nouveau votre script de construction Webpack.
-
-4. Vérifiez si le fichier `myBundle.js` est maintenant situé dans le dossier `dist/custom`.
-
+### Vérifiez
+le fichier `myBundle.js` est maintenant situé dans le dossier `dist/custom`.
+</Steps>
 Voici comment votre configuration devrait ressembler après les modifications :
 ```javascript copy
 module.exports = { 

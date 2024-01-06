@@ -30,7 +30,7 @@ mon-site/
 
 ```
 
-## **1. Initialiser le projet** 
+## Initialiser le projet
 Créez un nouveau dossier pour votre projet et initialisez un nouveau projet npm.
 
 ```bash copy
@@ -39,14 +39,14 @@ cd mon-site
 npm init -y
 ```
 
-## **2. Installer les dépendances nécessaires**
+## Installer les dépendances nécessaires
 Installez Webpack et le presse-papiers de développement.
 
 ```bash copy
 npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin
 ```
 
-## **3. Créer les fichiers HTML**
+## Créer les fichiers HTML
 Créez trois fichiers HTML pour chaque page : `index.html`, `about.html` et `contact.html`. Chaque fichier doit avoir un élément avec un identifiant unique où le contenu de la page sera inséré.
 ```html
 <!-- index.html -->
@@ -86,7 +86,7 @@ Créez trois fichiers HTML pour chaque page : `index.html`, `about.html` et `con
 </html>
 ```
 
-## **4. Créer les fichiers JavaScript**
+## Créer les fichiers JavaScript
 Créez trois fichiers JavaScript pour chaque page : `home.js`, `about.js` et `contact.js`. Chaque fichier doit contenir une fonction qui insère du contenu dans l'élément avec l'identifiant unique correspondant.
 
 ```javascript copy
@@ -100,7 +100,7 @@ document.getElementById('content').innerHTML = '<h1>À propos</h1>';
 document.getElementById('content').innerHTML = '<h1>Contactez-moi</h1>';
 ```
 
-## **5. Configurer Webpack**
+## Configurer Webpack
 Configurez Webpack pour regrouper vos fichiers JavaScript en un seul fichier. Vous pouvez utiliser le plugin `html-webpack-plugin` pour injecter automatiquement le bundle JavaScript dans vos fichiers HTML.
 
 Créez un fichier `webpack.config.js` à la racine de votre projet avec le contenu suivant :
@@ -145,5 +145,5 @@ plugins: [
 };
 ```
 
-## **6. Test**
+## Test
 Testez votre site en exécutant `npx webpack serve` et en ouvrant les fichiers HTML générés dans votre navigateur.

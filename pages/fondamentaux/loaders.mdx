@@ -1,3 +1,5 @@
+import { Steps } from "nextra/components"
+
 # Loaders
 Les loaders permettent à Webpack de traiter des fichiers autres que du JavaScript en les transformant en modules que votre application peut utiliser. Par exemple, vous pouvez utiliser des loaders pour traiter des fichiers CSS, des images, du TypeScript, etc.
 
@@ -22,8 +24,9 @@ module.exports = {
 };
 ```
 ## Exercice : Utiliser un Loader CSS
-
-1. Dans votre projet existant, créez un fichier CSS dans le dossier `src`. Par exemple, vous pouvez créer un fichier `styles.css` avec le contenu suivant :
+<Steps>
+### `styles.css`
+Dans votre projet existant, créez un fichier CSS dans le dossier `src`. Par exemple, vous pouvez créer un fichier `styles.css` avec le contenu suivant :
 
 ```css copy
 body {
@@ -31,14 +34,16 @@ body {
 }
 ```
 
-2. Importez ce fichier CSS dans votre fichier `index.js` :
+### `index.js`
+Importez ce fichier CSS dans votre fichier `index.js` :
 
 ```javascript copy
 import './styles.css';
 console.log('Bonjour de Webpack !');
 ```
 
-3. Modifiez votre fichier `webpack.config.js` pour ajouter un loader CSS. Vous aurez besoin d'installer `style-loader` et `css-loader` comme dépendances de développement :
+### `webpack.config.js`
+Modifiez votre fichier `webpack.config.js` pour ajouter un loader CSS. Vous aurez besoin d'installer `style-loader` et `css-loader` comme dépendances de développement :
 
 ```bash copy
 npm install --save-dev style-loader css-loader
@@ -61,6 +66,9 @@ module.exports = {
 };
 ```
 
-4. Exécutez à nouveau votre script de construction Webpack.
+### Build
+Exécutez à nouveau votre script de construction Webpack.
 
-5. Ouvrez votre fichier `index.html` dans un navigateur et vérifiez si le fond de la page est maintenant bleu clair.
+### Vérifiez
+Ouvrez votre fichier `index.html` dans un navigateur et vérifiez si le fond de la page est maintenant bleu clair.
+</Steps>

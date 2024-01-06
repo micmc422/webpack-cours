@@ -1,3 +1,5 @@
+import { Steps } from "nextra/components"
+
 # Entry Points
 L'entry point est le point de départ de votre application, le fichier JavaScript à partir duquel Webpack commencera à construire le graphe des dépendances. C'est généralement le point d'entrée principal de votre application.
 
@@ -10,26 +12,30 @@ module.exports = {
 };
 ```
 ## Exercice : Créer une application Webpack simple
+<Steps>
+### Structurer
+Créez un nouveau dossier pour votre projet et naviguez vers ce dossier dans votre terminal.
 
--1. Créez un nouveau dossier pour votre projet et naviguez vers ce dossier dans votre terminal.
-
-2. Initialisez un nouveau projet Node.js en exécutant la commande suivante :
+### Initialisez
+Initialisez un nouveau projet Node.js en exécutant la commande suivante
 
 ```bash copy
 npm init -y
 ```
 
-3. Installez Webpack et Webpack CLI en tant que dépendances de développement :
+### Webpack et Webpack CLI
+Installez Webpack et Webpack CLI en tant que dépendances de développement
 
 ```bash copy
 npm install --save-dev webpack webpack-cli
 ```
 
-4. Créez un fichier `index.html` dans votre dossier de projet avec le contenu suivant :
+### `index.html`
+Créez un fichier `index.html` dans votre dossier de projet avec le contenu suivant
 
 ```html copy
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
    <meta charset="UTF-8">
    <title>Webpack App</title>
@@ -41,13 +47,15 @@ npm install --save-dev webpack webpack-cli
 </html>
 ```
 
-5. Créez un fichier `index.js` dans un nouveau dossier `src` avec le contenu suivant :
+### `index.js`
+Créez un fichier `index.js` dans un nouveau dossier `src` avec le contenu suivant :
 
 ```javascript copy
 console.log('Bonjour de Webpack !');
 ```
 
-6. Créez un fichier `webpack.config.js` à la racine de votre projet avec le contenu suivant :
+### `webpack.config.js`
+Créez un fichier `webpack.config.js` à la racine de votre projet avec le contenu suivant
 
 ```javascript copy
 const path = require('path');
@@ -61,7 +69,8 @@ module.exports = {
 };
 ```
 
-7. Ajoutez un script `build` à votre fichier `package.json` pour exécuter Webpack :
+### `package.json`
+Ajoutez un script `build` à votre fichier `package.json` pour exécuter Webpack
 
 ```json copy
 "scripts": {
@@ -69,10 +78,12 @@ module.exports = {
 }
 ```
 
-8. Exécutez le script `build` :
+### Exécutez le script `build`
 
 ```bash copy
 npm run build
 ```
 
-9. Ouvrez votre fichier `index.html` dans un navigateur et vérifiez si le message 'Bonjour de Webpack !' s'affiche dans la console.
+### Test
+Ouvrez votre fichier `index.html` dans un navigateur et vérifiez si le message 'Bonjour de Webpack !' s'affiche dans la console.
+</Steps>

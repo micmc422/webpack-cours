@@ -1,9 +1,9 @@
 # Splitting et Bundling : Optimisation de la Taille des Fichiers
 
-## 1. Code Splitting avec Webpack
+## Code Splitting avec Webpack
 Code splitting est une technique qui permet de diviser votre code en morceaux plus petits. Cela peut améliorer les performances de votre application en réduisant le temps de chargement et en optimisant l'utilisation de la mémoire du navigateur.
 
-## 2. Dynamic Import()
+## Dynamic Import()
 La syntaxe `import()` permet d'introduire le code splitting de manière dynamique. Au lieu de charger tous les modules en une seule fois, vous pouvez charger des modules sur demande.
 
 Par exemple, vous pouvez utiliser `import()` pour charger un module seulement lorsque l'utilisateur clique sur un bouton spécifique.
@@ -37,7 +37,7 @@ button.addEventListener('click', async () => {
 
 Dans cet exemple, `other.js` n'est chargé que lorsque l'utilisateur clique sur le bouton. Jusqu'à ce moment, `other.js` n'est pas inclus dans le bundle principal de l'application.
 
-## 3. Configuration de SplitChunksPlugin
+## Configuration de SplitChunksPlugin
 Le plugin SplitChunks permet de partager des modules communs entre différents bundles. Cela peut optimiser la mise en cache et réduire le temps de chargement initial.
 
 Supposons que nous ayons une application avec plusieurs bundles, et nous voulons partager certains modules communs entre ces bundles pour optimiser la mise en cache et réduire le temps de chargement initial.
@@ -68,7 +68,7 @@ Dans cet exemple, nous avons deux points d'entrée, `app` et `admin`, qui sont c
 
 Par exemple, si `app.js` et `admin.js` importent tous deux le module `lodash`, `SplitChunksPlugin` va créer un troisième bundle qui contient `lodash`, et `lodash` sera supprimé des bundles `app` et `admin`. De cette façon, `lodash` ne sera téléchargé qu'une seule fois par le navigateur, ce qui peut améliorer les performances de l'application.
 
-## 4. Tree Shaking
+## Tree Shaking
 
 Tree shaking est une technique d'optimisation qui élimine le code inutilisé du bundle final. Cela peut réduire considérablement la taille du bundle. Voici un exemple de comment cela pourrait être fait avec Webpack.
 
@@ -96,7 +96,7 @@ usedFunction();
 
 Dans ce cas, `unusedFunction` ne sera pas inclus dans le bundle final, car il n'est pas utilisé dans l'application. Cela peut réduire la taille du bundle et améliorer les performances de l'application.
 
-## 5. Bundle Analysis
+## Bundle Analysis
 L'analyse de bundle est une technique qui permet de visualiser la taille des bundles générés. Cela peut vous aider à identifier les dépendances qui contribuent le plus à la taille du bundle et à prendre des mesures d'optimisation.
 
 L'analyse de bundle est une technique qui permet de visualiser la taille des bundles générés. Cela peut vous aider à identifier les dépendances qui contribuent le plus à la taille du bundle et à prendre des mesures d'optimisation.
