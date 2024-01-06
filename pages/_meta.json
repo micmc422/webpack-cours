@@ -1,9 +1,8 @@
 {
   "index": "Introduction à webpack",
+  "dependances-modules": "Dépendances & modules",
   "installation": "Installation",
   "fondamentaux": "Fondamentaux",
-  "avancee": "Configuration avancée",
-  "dependances-modules": "Dépendances & modules",
   "loaders": "Loaders",
   "plugins": "Plugins",
   "about": {
@@ -15,6 +14,7 @@
     "type": "page",
     "href": "mailto:michael.bardy@occitaweb.fr"
   },
-  "ressources": "Ressources",
-  "plan": "plan (à supprimer)"
+  "avancee": "Configuration avancée",
+  "exercice": "Exercice",
+  "ressources": "Ressources"
 }

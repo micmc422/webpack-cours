@@ -8,14 +8,14 @@ CommonJS est une spécification de module utilisée notamment dans Node.js. Elle
 
 *Exemple de module CommonJS :*
 
-```javascript
+```javascript copy
 // myModule.js
 const add = (a, b) => a + b;
 
 module.exports = add;
 ```
 
-```javascript
+```javascript copy
 // main.js
 const myModule = require('./myModule');
 
@@ -29,14 +29,14 @@ Les modules ECMAScript 6 (ES6) introduisent une nouvelle syntaxe pour les module
 
 *Exemple de module ES6 :*
 
-```javascript
+```javascript copy
 // myModule.js
 const add = (a, b) => a + b;
 
 export default add;
 ```
 
-```javascript
+```javascript copy
 // main.js
 import myModule from './myModule';
 
@@ -50,7 +50,7 @@ Pour utiliser ES6 Modules avec Webpack, assurez-vous d'avoir une configuration a
 
 *Exemple de configuration Webpack avec Babel :*
 
-```javascript
+```javascript copy
 // webpack.config.js
 module.exports = {
   // ...
@@ -70,10 +70,5 @@ module.exports = {
   },
 };
 ```
-
-**Objectifs :**
-- Comprendre la syntaxe et l'utilisation de CommonJS pour l'importation et l'exportation de modules.
-- Explorer la syntaxe et l'utilisation des modules ECMAScript 6 (ES6).
-- Savoir comment configurer Webpack pour prendre en charge ES6 Modules avec Babel.
 
 L'utilisation de CommonJS ou ES6 Modules dépend souvent du contexte du projet et des préférences de l'équipe de développement. Webpack offre une prise en charge native des deux syntaxes, vous permettant de choisir celle qui convient le mieux à vos besoins. Prêt à intégrer ces concepts dans votre projet Webpack ? Passons à la mise en pratique.

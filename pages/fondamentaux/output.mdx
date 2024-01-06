@@ -1,9 +1,9 @@
-### 2. Output :
+# Output
 L'output spécifie le nom et le chemin du fichier résultant généré par Webpack (le bundle). C'est le fichier que vous inclurez dans votre page HTML.
 
 Exemple de configuration dans `webpack.config.js` :
 
-```javascript
+```javascript copy
 const path = require('path');
 
 module.exports = {
@@ -15,7 +15,7 @@ module.exports = {
   // ...
 };
 ```
-### Exercice : Configurer l'output de Webpack
+## Exercice : Configurer l'output de Webpack
 
 1. Modifiez votre fichier `webpack.config.js` pour changer le nom du fichier de sortie en `myBundle.js`.
 
@@ -26,7 +26,7 @@ module.exports = {
 4. Vérifiez si le fichier `myBundle.js` est maintenant situé dans le dossier `dist/custom`.
 
 Voici comment votre configuration devrait ressembler après les modifications :
-```javascript
+```javascript copy
 module.exports = { 
   // ... output: 
   { 

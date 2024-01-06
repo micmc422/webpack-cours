@@ -1,35 +1,33 @@
-Les concepts de base de Webpack comprennent les entry points, output, loaders, et plugins. Comprendre ces concepts est essentiel pour configurer correctement Webpack. Voici une explication de chacun de ces éléments :
-
-### 1. Entry Points :
+# Entry Points
 L'entry point est le point de départ de votre application, le fichier JavaScript à partir duquel Webpack commencera à construire le graphe des dépendances. C'est généralement le point d'entrée principal de votre application.
 
 Exemple de configuration dans `webpack.config.js` :
 
-```javascript
+```javascript copy
 module.exports = {
   entry: './src/index.js',
   // ...
 };
 ```
-### Exercice : Créer une application Webpack simple
+## Exercice : Créer une application Webpack simple
 
-1. Créez un nouveau dossier pour votre projet et naviguez vers ce dossier dans votre terminal.
+-1. Créez un nouveau dossier pour votre projet et naviguez vers ce dossier dans votre terminal.
 
 2. Initialisez un nouveau projet Node.js en exécutant la commande suivante :
 
-```bash
+```bash copy
 npm init -y
 ```
 
 3. Installez Webpack et Webpack CLI en tant que dépendances de développement :
 
-```bash
+```bash copy
 npm install --save-dev webpack webpack-cli
 ```
 
 4. Créez un fichier `index.html` dans votre dossier de projet avec le contenu suivant :
 
-```html
+```html copy
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,13 +43,13 @@ npm install --save-dev webpack webpack-cli
 
 5. Créez un fichier `index.js` dans un nouveau dossier `src` avec le contenu suivant :
 
-```javascript
+```javascript copy
 console.log('Bonjour de Webpack !');
 ```
 
 6. Créez un fichier `webpack.config.js` à la racine de votre projet avec le contenu suivant :
 
-```javascript
+```javascript copy
 const path = require('path');
 
 module.exports = {
@@ -65,7 +63,7 @@ module.exports = {
 
 7. Ajoutez un script `build` à votre fichier `package.json` pour exécuter Webpack :
 
-```json
+```json copy
 "scripts": {
  "build": "webpack"
 }
@@ -73,7 +71,7 @@ module.exports = {
 
 8. Exécutez le script `build` :
 
-```bash
+```bash copy
 npm run build
 ```
 

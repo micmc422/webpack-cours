@@ -2,30 +2,108 @@
 
 La gestion efficace des environnements de développement et de production est cruciale pour garantir que votre application Webpack fonctionne de manière optimale à chaque étape de son cycle de vie. Dans ce module, nous explorerons comment configurer Webpack pour répondre spécifiquement aux exigences de ces deux environnements distincts.
 
-**1. Configuration différenciée :**
-   - Apprendre à utiliser des fichiers de configuration spécifiques à chaque environnement (webpack.dev.js et webpack.prod.js).
-   - Comprendre comment tirer parti des fonctionnalités conditionnelles pour ajuster la configuration en fonction de l'environnement.
+## Configuration différenciée
 
-**2. Variables d'environnement :**
-   - Découvrir comment utiliser des variables d'environnement pour passer des paramètres à la configuration de Webpack.
-   - Mettre en place des stratégies pour gérer les clés d'API, les URL de services, et d'autres variables qui peuvent changer entre les environnements.
+Apprendre à utiliser des fichiers de configuration spécifiques à chaque environnement (webpack.dev.js et webpack.prod.js).
+Comprendre comment tirer parti des fonctionnalités conditionnelles pour ajuster la configuration en fonction de l'environnement.
 
-**3. Optimisations spécifiques à l'environnement :**
-   - Explorer les optimisations spécifiques à la production, telles que la minification des fichiers JavaScript, la suppression des avertissements de développement, et la gestion des sources map.
-   - Configurer Webpack pour générer des bundles optimisés et prêts pour la production.
+Exemple :
 
-**4. Intégration de webpack-dev-server :**
-   - Comprendre comment utiliser webpack-dev-server pour faciliter le développement en temps réel.
-   - Configurer le serveur de développement avec des fonctionnalités telles que le rechargement automatique et l'injection de scripts.
+```javascript
+// webpack.dev.js
+module.exports = {
+ mode: 'development',
+ // autres configurations...
+};
 
-**5. Utilisation de DefinePlugin :**
-   - Apprendre à utiliser le plugin DefinePlugin pour définir des variables globales dans le code en fonction de l'environnement.
-   - Mettre en œuvre des stratégies intelligentes pour gérer les différences entre le code de développement et de production.
+// webpack.prod.js
+module.exports = {
+ mode: 'production',
+ // autres configurations...
+};
+```
 
-**Objectifs :**
-   - Configurer Webpack de manière à optimiser les performances et à répondre aux exigences spécifiques des environnements de développement et de production.
-   - Maîtriser l'utilisation de webpack-dev-server pour un développement réactif.
-   - Mettre en œuvre des pratiques de gestion des variables d'environnement pour une flexibilité accrue.
-   - Assurer une transition fluide entre le développement et la production en configurant des bundles adaptés à chaque scénario.
+## Variables d'environnement
 
-Préparez-vous à affiner votre compréhension de la configuration de Webpack et à découvrir des stratégies avancées pour optimiser vos applications web dans différents environnements. Passons maintenant à la première étape : la configuration différenciée.
+Découvrir comment utiliser des variables d'environnement pour passer des paramètres à la configuration de Webpack.
+Mettre en place des stratégies pour gérer les clés d'API, les URL de services, et d'autres variables qui peuvent changer entre les environnements.
+
+Exemple :
+
+```javascript
+// webpack.config.js
+module.exports = {
+ plugins: [
+   new webpack.DefinePlugin({
+     'process.env.API_KEY': JSON.stringify(process.env.API_KEY),
+   }),
+ ],
+};
+```
+
+## Optimisations spécifiques à l'environnement
+
+Explorer les optimisations spécifiques à la production, telles que la minification des fichiers JavaScript, la suppression des avertissements de développement, et la gestion des sources map.
+Configurer Webpack pour générer des bundles optimisés et prêts pour la production.
+
+Exemple :
+
+```javascript
+// webpack.prod.js
+module.exports = {
+ mode: 'production',
+ optimization: {
+   minimize: true,
+   removeConsole: true,
+   sourceMap: false,
+ },
+ // autres configurations...
+};
+```
+
+## Intégration de webpack-dev-server
+
+Comprendre comment utiliser webpack-dev-server pour faciliter le développement en temps réel.
+Configurer le serveur de développement avec des fonctionnalités telles que le rechargement automatique et l'injection de scripts.
+
+Exemple :
+
+```javascript
+// webpack.dev.js
+module.exports = {
+ mode: 'development',
+ devServer: {
+   contentBase: path.join(__dirname, 'dist'),
+   compress: true,
+   port: 9000,
+ },
+ // autres configurations...
+};
+```
+
+## Utilisation de DefinePlugin
+
+Apprendre à utiliser le plugin DefinePlugin pour définir des variables globales dans le code en fonction de l'environnement.
+Mettre en œuvre des stratégies intelligentes pour gérer les différences entre le code de développement et de production.
+
+Exemple :
+
+```javascript
+// webpack.config.js
+const webpack = require('webpack');
+
+module.exports = {
+ plugins: [
+   new webpack.DefinePlugin({
+     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+   }),
+ ],
+};
+```
+
+## Objectifs
+
+Configurer Webpack de manière à optimiser les performances et à répondre aux exigences spécifiques des environnements de développement et de production.
+Maîtriser l'utilisation de webpack-dev-server pour un développement réactif.
+Mettre en œuvre des pratiques de gestion des variables d'environnement pour une flexibilité accrue.
+Assurer une transition fluide entre le développement et la production en configurant des bundles adaptés à chaque scénario.

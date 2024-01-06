@@ -8,21 +8,21 @@ Assurez-vous d'avoir Node.js installé sur votre système, car npm (Node Package
 ### Étape 2 : Initialisation d'un projet
 Créez un répertoire pour votre projet et ouvrez une console (terminal). Naviguez jusqu'au répertoire du projet et initialisez un fichier `package.json` en exécutant la commande suivante :
 
-```bash
+```bash copy
 npm init -y
 ```
 
 ### Étape 3 : Installation de Webpack
 Installez Webpack localement dans votre projet en utilisant la commande npm :
 
-```bash
+```bash copy
 npm install webpack webpack-cli --save-dev
 ```
 
 ### Étape 4 : Création des fichiers de configuration
 Créez un fichier de configuration pour Webpack. Créez un fichier `webpack.config.js` à la racine de votre projet. Voici un exemple de configuration de base :
 
-```javascript
+```javascript copy
 // webpack.config.js
 const path = require('path');
 
@@ -38,7 +38,7 @@ module.exports = {
 ### Étape 5 : Configuration du script npm
 Ajoutez des scripts npm dans votre fichier `package.json` pour exécuter Webpack. Modifiez la section `scripts` comme suit :
 
-```json
+```json copy
 "scripts": {
   "build": "webpack"
 }
@@ -50,10 +50,15 @@ Créez un fichier d'entrée pour votre application. Par exemple, créez un fichi
 ### Étape 7 : Exécution de Webpack
 Exécutez la commande npm pour construire votre application avec Webpack :
 
-```bash
+```bash copy
 npm run build
 ```
-
 Cela devrait créer un répertoire `dist` avec un fichier `bundle.js`.
+
+Pendant le développement vous pouvez aussi utiliser : 
+```bash copy
+npx webpack serve
+```
+Cette commande lance un serveur node dont le résultat est accessible via le port 8080 de localhost
 
 Vous avez maintenant installé Webpack, configuré un fichier de configuration de base et construit votre première application. Vous pouvez ensuite élargir cette configuration en ajoutant des loaders, des plugins, etc., en fonction des besoins spécifiques de votre projet.

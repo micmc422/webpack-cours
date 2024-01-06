@@ -1,9 +1,9 @@
-### 3. Loaders :
+# Loaders
 Les loaders permettent à Webpack de traiter des fichiers autres que du JavaScript en les transformant en modules que votre application peut utiliser. Par exemple, vous pouvez utiliser des loaders pour traiter des fichiers CSS, des images, du TypeScript, etc.
 
 Exemple de configuration pour un loader CSS dans `webpack.config.js` :
 
-```javascript
+```javascript copy
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -21,11 +21,11 @@ module.exports = {
   // ...
 };
 ```
-### Exercice : Utiliser un Loader CSS
+## Exercice : Utiliser un Loader CSS
 
 1. Dans votre projet existant, créez un fichier CSS dans le dossier `src`. Par exemple, vous pouvez créer un fichier `styles.css` avec le contenu suivant :
 
-```css
+```css copy
 body {
  background-color: lightblue;
 }
@@ -33,20 +33,20 @@ body {
 
 2. Importez ce fichier CSS dans votre fichier `index.js` :
 
-```javascript
+```javascript copy
 import './styles.css';
 console.log('Bonjour de Webpack !');
 ```
 
 3. Modifiez votre fichier `webpack.config.js` pour ajouter un loader CSS. Vous aurez besoin d'installer `style-loader` et `css-loader` comme dépendances de développement :
 
-```bash
+```bash copy
 npm install --save-dev style-loader css-loader
 ```
 
 Et ajoutez les règles suivantes à votre configuration :
 
-```javascript
+```javascript copy
 module.exports = {
  // ...
  module: {

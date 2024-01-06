@@ -2,96 +2,89 @@
 
 Dans ce module, nous allons explorer l'utilisation de certains plugins populaires dans Webpack. Ces plugins étendent les fonctionnalités de Webpack en permettant l'automatisation de tâches spécifiques pendant le processus de construction. Voyons comment intégrer et utiliser ces plugins courants dans votre configuration Webpack.
 
-**1. HtmlWebpackPlugin : Génération Automatique de Fichiers HTML :**
-   - HtmlWebpackPlugin simplifie la création de fichiers HTML en générant automatiquement un fichier HTML basé sur votre configuration Webpack.
+## HtmlWebpackPlugin : Génération Automatique de Fichiers HTML
+HtmlWebpackPlugin simplifie la création de fichiers HTML en générant automatiquement un fichier HTML basé sur votre configuration Webpack.
 
-   ```javascript
-   const HtmlWebpackPlugin = require('html-webpack-plugin');
+```javascript
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-   module.exports = {
-     // ...
-     plugins: [
-       new HtmlWebpackPlugin({
-         template: 'src/index.html',
-         filename: 'index.html',
-       }),
-     ],
-   };
-   ```
+module.exports = {
+ // ...
+ plugins: [
+   new HtmlWebpackPlugin({
+     template: 'src/index.html',
+     filename: 'index.html',
+   }),
+ ],
+};
+```
 
-**2. MiniCssExtractPlugin : Extraction des Fichiers CSS :**
-   - MiniCssExtractPlugin permet d'extraire les fichiers CSS de vos bundles et de les sauvegarder séparément.
+## MiniCssExtractPlugin : Extraction des Fichiers CSS
+MiniCssExtractPlugin permet d'extraire les fichiers CSS de vos bundles et de les sauvegarder séparément.
 
-   ```javascript
-   const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+```javascript
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-   module.exports = {
-     // ...
-     module: {
-       rules: [
-         {
-           test: /\.css$/,
-           use: [MiniCssExtractPlugin.loader, 'css-loader'],
-         },
-       ],
+module.exports = {
+ // ...
+ module: {
+   rules: [
+     {
+       test: /\.css$/,
+       use: [MiniCssExtractPlugin.loader, 'css-loader'],
      },
-     plugins: [
-       new MiniCssExtractPlugin({
-         filename: 'styles.css',
-       }),
-     ],
-   };
-   ```
+   ],
+ },
+ plugins: [
+   new MiniCssExtractPlugin({
+     filename: 'styles.css',
+   }),
+ ],
+};
+```
 
-**3. UglifyJsPlugin : Minification des Fichiers JavaScript :**
-   - UglifyJsPlugin permet de minifier et de compresser les fichiers JavaScript, réduisant ainsi leur taille.
+## UglifyJsPlugin : Minification des Fichiers JavaScript
+UglifyJsPlugin permet de minifier et de compresser les fichiers JavaScript, réduisant ainsi leur taille.
 
-   ```javascript
-   const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+```javascript
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-   module.exports = {
-     // ...
-     optimization: {
-       minimizer: [new UglifyJsPlugin()],
-     },
-   };
-   ```
+module.exports = {
+ // ...
+ optimization: {
+   minimizer: [new UglifyJsPlugin()],
+ },
+};
+```
 
-**4. CleanWebpackPlugin : Nettoyage du Répertoire de Sortie :**
-   - CleanWebpackPlugin supprime le contenu du répertoire de sortie avant chaque nouvelle construction.
+## CleanWebpackPlugin : Nettoyage du Répertoire de Sortie
+CleanWebpackPlugin supprime le contenu du répertoire de sortie avant chaque nouvelle construction.
 
-   ```javascript
-   const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+```javascript
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-   module.exports = {
-     // ...
-     plugins: [
-       new CleanWebpackPlugin(),
-     ],
-   };
-   ```
+module.exports = {
+ // ...
+ plugins: [
+   new CleanWebpackPlugin(),
+ ],
+};
+```
 
-**5. DefinePlugin : Définition de Variables Globales :**
-   - DefinePlugin permet de définir des variables globales dans votre code, ce qui peut être utile pour la gestion des environnements.
+## DefinePlugin : Définition de Variables Globales
+DefinePlugin permet de définir des variables globales dans votre code, ce qui peut être utile pour la gestion des environnements.
 
-   ```javascript
-   const webpack = require('webpack');
+```javascript
+const webpack = require('webpack');
 
-   module.exports = {
-     // ...
-     plugins: [
-       new webpack.DefinePlugin({
-         'process.env.NODE_ENV': JSON.stringify('production'),
-       }),
-     ],
-   };
-   ```
-
-**Objectifs :**
-   - Comprendre l'utilisation de HtmlWebpackPlugin pour générer automatiquement des fichiers HTML.
-   - Configurer MiniCssExtractPlugin pour extraire des fichiers CSS.
-   - Utiliser UglifyJsPlugin pour la minification des fichiers JavaScript.
-   - Intégrer CleanWebpackPlugin pour nettoyer le répertoire de sortie.
-   - Utiliser DefinePlugin pour définir des variables globales.
-
-L'intégration de ces plugins dans votre configuration Webpack vous permettra d'automatiser diverses tâches et d'optimiser le processus de construction de votre application. Prêt à donner un coup de pouce à vos projets Webpack ? Passons à la mise en œuvre pratique de ces plugins.
+module.exports = {
+ // ...
+ plugins: [
+   new webpack.DefinePlugin({
+     'process.env.NODE_ENV': JSON.stringify('production'),
+   }),
+ ],
+};
+```
+## Conclusion
+L'intégration de ces plugins dans votre configuration Webpack vous permettra d'automatiser diverses tâches et d'optimiser le processus de construction de votre application.
